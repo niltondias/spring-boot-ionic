@@ -23,4 +23,10 @@ public class CategoriaService {
         //return obj.orElse(null);
 
     }
+
+    public Categoria insert( Categoria obj ) {
+        obj.setId(null);  // colocando null o método save considera um novo objeto no banco.
+        return repo.save(obj);
+
+    }
 }
