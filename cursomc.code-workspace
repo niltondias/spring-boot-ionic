@@ -9,6 +9,7 @@
 		"java.configuration.updateBuildConfiguration": "interactive",
 		"maven.terminal.useJavaHome": true,
 		"java.home": "C:\\Program Files\\Java\\jdk-11.0.6",
-		"totvsLanguageServer.welcomePage": false
+		"totvsLanguageServer.welcomePage": false,
+		"files.autoGuessEncoding": true
 	}
 }
