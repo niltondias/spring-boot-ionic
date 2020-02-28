@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 import br.com.finework.cursomc.domain.Pedido;
 import br.com.finework.cursomc.repositories.PedidoRepository;
-import br.com.finework.cursomc.services.exceptions.ObjectNotFoundException;
+import br.com.finework.cursomc.services.exceptions.DataIntegrityException;
 
 @Service
 public class PedidoService {
@@ -17,7 +17,7 @@ public class PedidoService {
     public Pedido find(Integer id) {
         Optional<Pedido> obj = repo.findById(id);
 
-        return obj.orElseThrow(() -> new ObjectNotFoundException(
+        return obj.orElseThrow(() -> new DataIntegrityException(
             "Objeto não encontrado! Id: " + id + ", Tipo: " + Pedido.class.getName()));
         
         //return obj.orElse(null);
