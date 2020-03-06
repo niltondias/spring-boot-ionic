@@ -14,11 +14,11 @@ public class ClienteDTO implements Serializable {
 
     private Integer id;
 
-    @NotEmpty( message = "Preenchimento obrigatório" )
+    @NotEmpty( message = "Preenchimento obrigat?rio" )
     @Length( min=5, max = 120, message = "O tamanho deve ser entre 5 e 120" )
     private String nome;
 
-    @NotEmpty( message = "Preenchimento obrigatório" )
+    @NotEmpty( message = "Preenchimento obrigat?rio" )
     @Email( message = "Email inválido" )
     private String email;
 
