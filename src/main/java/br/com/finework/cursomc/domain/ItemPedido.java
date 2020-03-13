@@ -81,6 +81,15 @@ public class ItemPedido implements Serializable {
         return result;
     }
 
+    public void setPedido( Pedido pedido ) {
+        id.setPedido( pedido );
+
+    }
+
+    public void setProduto( Produto produto ) {
+        id.setProduto( produto );
+    }
+
     @Override
     public boolean equals(Object obj) {
         if (this == obj)
