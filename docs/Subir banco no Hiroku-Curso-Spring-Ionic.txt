@@ -1,0 +1,6 @@
+URL do banco MySql no Heroku
+CLEARDB_DATABASE_URL: mysql://ba3e5c9645b1cf:657558be@us-cdbr-iron-east-04.cleardb.net/heroku_d1ac084647226b3?reconnect=true
+
+Comando utilizado para copiar o banco de dados para o Heroku
+
+mysql --host=us-cdbr-iron-east-04.cleardb.net --user=ba3e5c9645b1cf --password=657558be --reconnect heroku_d1ac084647226b3 < arquivo.sql
