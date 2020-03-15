@@ -26,14 +26,14 @@ public class CategoriaService {
         Optional<Categoria> obj = repo.findById(id);
 
         return obj.orElseThrow(() -> new ObjectNotFoundException(
-            "Objeto n√£o encontrado! Id: " + id + ", Tipo: " + Categoria.class.getName()));
+            "Objeto n√É¬£o encontrado! Id: " + id + ", Tipo: " + Categoria.class.getName()));
         
         //return obj.orElse(null);
 
     }
 
     public Categoria insert( Categoria obj ) {
-        obj.setId(null);  // colocando null o mÈtodo save considera um novo objeto no banco.
+        obj.setId(null);  // colocando null o m√©todo save considera um novo objeto no banco.
         return repo.save(obj);
     }
 
@@ -48,7 +48,7 @@ public class CategoriaService {
         try {
             repo.deleteById(id);    
         } catch ( DataIntegrityViolationException e ) {
-            throw new DataIntegrityException("N„o È possÌvel excluir uma categoria que possue produtos");
+            throw new DataIntegrityException("N√£o √© poss√≠vel excluir uma categoria que possue produtos");
         }
     }
 

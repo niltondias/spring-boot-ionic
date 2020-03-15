@@ -34,7 +34,7 @@ public class ClienteService {
         Optional<Cliente> obj = repo.findById(id);
 
         return obj.orElseThrow(() -> new DataIntegrityException(
-            "Objeto n„o encontrado! Id: " + id + ", Tipo: " + Cliente.class.getName()));
+            "Objeto n√£o encontrado! Id: " + id + ", Tipo: " + Cliente.class.getName()));
         
         //return obj.orElse(null);
 
@@ -42,7 +42,7 @@ public class ClienteService {
     
     @Transactional
     public Cliente insert( Cliente obj ) {
-        obj.setId(null);  // colocando null o mÈtodo save considera um novo objeto no banco.
+        obj.setId(null);  // colocando null o m√©todo save considera um novo objeto no banco.
         obj = repo.save(obj);
         enderecoRepository.saveAll(obj.getEnderecos());
         return obj;
@@ -59,7 +59,7 @@ public class ClienteService {
         try {
             repo.deleteById(id);    
         } catch ( DataIntegrityViolationException e ) {
-            throw new DataIntegrityException("N„o È possÌvel porque h· entidades relacionadas");
+            throw new DataIntegrityException("N√£o √© poss√≠vel porque h√° entidades relacionadas");
         }
     }
 
