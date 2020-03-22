@@ -15,11 +15,14 @@ import org.springframework.transaction.annotation.Transactional;
 import br.com.finework.cursomc.domain.Cidade;
 import br.com.finework.cursomc.domain.Cliente;
 import br.com.finework.cursomc.domain.Endereco;
+import br.com.finework.cursomc.domain.enums.Perfil;
 import br.com.finework.cursomc.domain.enums.TipoCliente;
 import br.com.finework.cursomc.dto.ClienteDTO;
 import br.com.finework.cursomc.dto.ClienteNewDTO;
 import br.com.finework.cursomc.repositories.ClienteRepository;
 import br.com.finework.cursomc.repositories.EnderecoRepository;
+import br.com.finework.cursomc.security.UserSS;
+import br.com.finework.cursomc.services.exceptions.AuthorizationException;
 import br.com.finework.cursomc.services.exceptions.DataIntegrityException;
 
 @Service
@@ -35,6 +38,13 @@ public class ClienteService {
     BCryptPasswordEncoder pe;
 
     public Cliente find(Integer id) {
+
+        UserSS user = UserService.authenticated();
+
+        if( user == null || !user.hasRole(Perfil.ADMIN) && !id.equals(user.getId()) ) {
+            throw new AuthorizationException("Acesso negado!");
+        }
+
         Optional<Cliente> obj = repo.findById(id);
 
         return obj.orElseThrow(() -> new DataIntegrityException(
@@ -96,12 +106,10 @@ public class ClienteService {
         }
 
         return cli;
-
     }
     
     private void updateData(Cliente newObj, Cliente obj ) {
         newObj.setNome(obj.getNome());
         newObj.setEmail(obj.getEmail());
     }
-
 }
