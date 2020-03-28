@@ -2,7 +2,6 @@ package br.com.finework.cursomc.resources.exception;
 
 import javax.servlet.http.HttpServletRequest;
 
-import org.apache.tomcat.util.http.parser.Authorization;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
