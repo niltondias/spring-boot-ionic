@@ -15,6 +15,8 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
+import br.com.finework.cursomc.services.exceptions.FileException;
+
 @Service
 public class S3Service {
 
@@ -49,7 +51,7 @@ public class S3Service {
             return s3client.getUrl(bucketName, fileName).toURI();
         }
         catch (URISyntaxException e) {
-            throw new RuntimeException("Erro ao converter URL para URI");
+            throw new FileException("Erro ao converter URL para URI");
         }
     }
 
