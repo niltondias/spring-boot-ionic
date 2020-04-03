@@ -50,7 +50,7 @@ public class PedidoService {
         Optional<Pedido> obj = repo.findById(id);
 
         return obj.orElseThrow(() -> new DataIntegrityException(
-            "Objeto nÃ£o encontrado! Id: " + id + ", Tipo: " + Pedido.class.getName()));
+            "Objeto não encontrado! Id: " + id + ", Tipo: " + Pedido.class.getName()));
         
         //return obj.orElse(null);
 
