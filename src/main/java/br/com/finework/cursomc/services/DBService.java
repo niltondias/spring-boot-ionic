@@ -171,17 +171,16 @@ public class DBService {
         p50.getCategorias().add(cat1);
 
         cat1.getProdutos().addAll(Arrays.asList(p1, p2, p3));
-        cat2.getProdutos().addAll(Arrays.asList(p2));
-
-        p1.getCategorias().addAll(Arrays.asList(cat1));
-        p2.getCategorias().addAll(Arrays.asList(cat1, cat2));
-        p3.getCategorias().addAll(Arrays.asList(cat1));
         cat2.getProdutos().addAll(Arrays.asList(p2, p4));
         cat3.getProdutos().addAll(Arrays.asList(p5, p6));
         cat4.getProdutos().addAll(Arrays.asList(p1, p2, p3, p7));
         cat5.getProdutos().addAll(Arrays.asList(p8));
         cat6.getProdutos().addAll(Arrays.asList(p9, p10));
         cat7.getProdutos().addAll(Arrays.asList(p11));
+
+        p1.getCategorias().addAll(Arrays.asList(cat1));
+        p2.getCategorias().addAll(Arrays.asList(cat1, cat2));
+        p3.getCategorias().addAll(Arrays.asList(cat1));
 
         p1.getCategorias().addAll(Arrays.asList(cat1, cat4));
         p2.getCategorias().addAll(Arrays.asList(cat1, cat2, cat4));

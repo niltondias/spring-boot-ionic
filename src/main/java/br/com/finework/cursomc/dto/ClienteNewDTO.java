@@ -88,7 +88,6 @@ public class ClienteNewDTO implements Serializable {
         return senha;
     }
 
-    @NotEmpty
     public void setSenha(String senha) {
         this.senha = senha;
     }
